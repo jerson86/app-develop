@@ -24,7 +24,9 @@ function login(email, password){
             alertType = 'success'
             message = 'Inicio de sesión exitoso'
             alertBuilder(alertType, message)
-            localStorage.setItem('token', 'ssasa3sasa323s2a3sa2s3')
+            response.json().then((data) =>{
+                localStorage.setItem('token', data.token) 
+            })
             setTimeout(() =>{
                 location.href = 'admin/dashboard.html'
             }, 2000)// 2000 ms = 2 segundos
